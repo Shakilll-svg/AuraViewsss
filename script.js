@@ -158,17 +158,13 @@ restartBtn.addEventListener('click', restartQuiz);
 // Gestione del form di contatto
 const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // Il form viene inviato direttamente a Formspree
+    // Non blocchiamo l'invio con e.preventDefault()
     
-    // Simula l'invio del form
-    const formData = new FormData(contactForm);
-    const name = contactForm.querySelector('input[type="text"]').value;
-    
-    // Mostra un messaggio di conferma
-    alert(`Grazie ${name}! La tua richiesta è stata inviata. Ti contatterò presto per il tuo edit personalizzato!`);
-    
-    // Resetta il form
-    contactForm.reset();
+    // Mostra un messaggio di caricamento
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    submitBtn.textContent = 'INVIANDO...';
+    submitBtn.disabled = true;
 });
 
 // Inizializza il quiz quando la pagina è caricata

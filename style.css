@@ -369,6 +369,96 @@ section {
     background: linear-gradient(180deg, transparent, rgba(176, 38, 255, 0.1), transparent);
 }
 
+/* Sezione Cyber Achievements */
+.achievements-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, transparent, rgba(255, 0, 255, 0.05), transparent);
+}
+
+.achievements-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.achievement-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--neon-purple), var(--neon-pink), var(--neon-green));
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.5);
+}
+
+.achievement-item {
+    position: relative;
+    margin: 60px 0;
+    padding: 20px;
+    transition: all 0.4s ease;
+}
+
+.achievement-item:nth-child(odd) {
+    margin-left: 55%;
+}
+
+.achievement-item:nth-child(even) {
+    margin-right: 55%;
+    text-align: right;
+}
+
+.achievement-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: var(--neon-purple);
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--neon-purple), 0 0 60px var(--neon-purple);
+    animation: pulse 2s infinite;
+}
+
+.achievement-content {
+    background: var(--card-bg);
+    border: 2px solid var(--neon-purple);
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.2);
+}
+
+.achievement-item:hover .achievement-content {
+    transform: scale(1.05);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+.achievement-title {
+    font-size: 1.8rem;
+    color: var(--neon-purple);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+}
+
+.achievement-desc {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
 .cta-container {
     max-width: 900px;
     margin: 0 auto;
@@ -777,6 +867,15 @@ section {
     box-shadow: 0 0 30px rgba(176, 38, 255, 0.6);
 }
 
+.form-warning {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
 .copyright {
     color: #666;
     font-size: 0.9rem;
@@ -821,6 +920,27 @@ section {
         font-size: 2rem;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .service-icon {
+        font-size: 3rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .service-desc {
+        font-size: 0.9rem;
+    }
+
     .question {
         font-size: 1.3rem;
     }
@@ -844,6 +964,37 @@ section {
 
     .cta-content {
         padding: 40px 25px;
+    }
+
+    .achievement-line {
+        left: 20px;
+    }
+
+    .achievement-item:nth-child(odd),
+    .achievement-item:nth-child(even) {
+        margin-left: 50px;
+        margin-right: 0;
+        text-align: left;
+    }
+
+    .achievement-glow {
+        left: 20px;
+    }
+
+    .achievement-content {
+        padding: 20px;
+    }
+
+    .achievement-icon {
+        font-size: 2.5rem;
+    }
+
+    .achievement-title {
+        font-size: 1.4rem;
+    }
+
+    .achievement-desc {
+        font-size: 1rem;
     }
 
     section {
@@ -887,6 +1038,27 @@ section {
 
     .feature-text {
         font-size: 0.8rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .service-card {
+        padding: 25px 15px;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+
+    .service-desc {
+        font-size: 0.85rem;
     }
 
     .option {
