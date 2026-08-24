@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Points - Canale YouTube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sfondo animato -->
+    <div class="animated-background">
+        <div class="floating-purple"></div>
+        <div class="floating-purple"></div>
+        <div class="floating-purple"></div>
+        <div class="floating-purple"></div>
+        <div class="floating-purple"></div>
+        <div class="floating-green"></div>
+        <div class="floating-green"></div>
+        <div class="floating-green"></div>
+        <div class="floating-pink"></div>
+        <div class="floating-pink"></div>
+        <div class="floating-blue"></div>
+        <div class="floating-blue"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
+    <!-- Header con animazione -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="channel-name">AURA POINTS</h1>
+            <p class="channel-subtitle">Edit e Video con Stile</p>
+        </div>
+    </header>
+
+    <!-- Sezione Call to Action -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">PRONTO AD AUMENTARE IL TUO AURA?</h2>
+                <p class="cta-subtitle">Iscriviti al canale per non perdere i prossimi edit epici!</p>
+                <a href="https://www.youtube.com/@auraviewsss/shorts" class="cta-button" target="_blank">
+                    <span class="cta-icon">▶</span>
+                    ISCRIVITI ORA
+                </a>
+                <div class="cta-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span class="feature-text">Edit Epici</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎬</span>
+                        <span class="feature-text">Effetti Neon</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔥</span>
+                        <span class="feature-text">Aura Points</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Calcolatore di Aura -->
+    <section class="aura-calculator-section">
+        <h2 class="section-title">CALCOLATORE DI AURA</h2>
+        <div class="calculator-container">
+            <div class="calculator-box">
+                <div id="quiz-container">
+                    <div class="question-container" id="question-container">
+                        <h3 class="question" id="question"></h3>
+                        <div class="options" id="options"></div>
+                    </div>
+                </div>
+                <button class="next-btn" id="next-btn">PROSSIMA DOMANDA</button>
+                <div id="result-container" class="result-container hidden">
+                    <h3 class="result-title">IL TUO AURA SCORE</h3>
+                    <div class="aura-score" id="aura-score"></div>
+                    <p class="result-message" id="result-message"></p>
+                    <button class="restart-btn" id="restart-btn">RICALCOLA</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">CONTATTAMI</h3>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@auraviewsss/shorts" class="social-link" target="_blank">YouTube</a>
+                <div class="social-item">
+                    <a href="#" class="social-link">Instagram</a>
+                    <span class="soon-text">Soon...</span>
+                </div>
+                <div class="social-item">
+                    <a href="#" class="social-link">TikTok</a>
+                    <span class="soon-text">Soon...</span>
+                </div>
+                <a href="https://x.com/canavero_m44421" class="social-link" target="_blank">Twitter</a>
+            </div>
+            <form class="contact-form">
+                <input type="text" class="form-input" placeholder="Il tuo nome" required>
+                <input type="email" class="form-input" placeholder="La tua email" required>
+                <textarea class="form-textarea" placeholder="Descrivi l'edit che vuoi" rows="4" required></textarea>
+                <button type="submit" class="submit-btn">INVIA RICHIESTA</button>
+            </form>
+            <p class="copyright">© 2024 Aura Points. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
