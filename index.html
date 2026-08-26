@@ -7,28 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sfondo animato -->
+    <!-- Splash Screen Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">AURA POINTS</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+            <div class="preloader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Sfondo animato ottimizzato -->
     <div class="animated-background">
         <div class="floating-purple"></div>
-        <div class="floating-purple"></div>
-        <div class="floating-purple"></div>
-        <div class="floating-purple"></div>
-        <div class="floating-purple"></div>
-        <div class="floating-green"></div>
-        <div class="floating-green"></div>
         <div class="floating-green"></div>
         <div class="floating-pink"></div>
-        <div class="floating-pink"></div>
-        <div class="floating-blue"></div>
-        <div class="floating-blue"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
     </div>
 
     <!-- Header con animazione -->
@@ -36,8 +30,45 @@
         <div class="header-content">
             <h1 class="channel-name">AURA POINTS</h1>
             <p class="channel-subtitle">Edit e Video con Stile</p>
+            <button class="theme-toggle" id="theme-toggle">
+                <span class="theme-icon">🌙</span>
+            </button>
         </div>
     </header>
+
+    <!-- Sezione About -->
+    <section class="about-section">
+        <div class="about-container">
+            <h2 class="about-title">ABOUT ME</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Benvenuto nel mondo di Aura Points! Sono un editor specializzato in creazioni cyberpunk e neon effects che trasformano i tuoi video in esperienze visive uniche.
+                    </p>
+                    <p class="about-description">
+                        La mia missione è portare il tuo contenuto al livello successivo con editing professionali, VFX cinematografici e sound design impeccabile. Ogni progetto è un'opportunità per creare qualcosa di straordinario.
+                    </p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Subscribers</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Passion</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-icon">⚡</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Sezione Call to Action -->
     <section class="cta-section">
@@ -67,43 +98,133 @@
         </div>
     </section>
 
-    <!-- Sezione Cyber Achievements -->
-    <section class="achievements-section">
-        <h2 class="section-title">CYBER ACHIEVEMENTS</h2>
-        <div class="achievements-container">
-            <div class="achievement-line"></div>
-            <div class="achievement-item">
-                <div class="achievement-glow"></div>
-                <div class="achievement-content">
-                    <span class="achievement-icon">⚡</span>
-                    <h3 class="achievement-title">OVER 10K AURA POINTS</h3>
-                    <p class="achievement-desc">Edit epici che incrementano il tuo aura</p>
+    <!-- Sezione Icons Showcase -->
+    <section class="icons-section">
+        <div class="icons-container">
+            <div class="icon-float">⚡</div>
+            <div class="icon-float">🔥</div>
+            <div class="icon-float">✨</div>
+            <div class="icon-float">🎬</div>
+            <div class="icon-float">🚀</div>
+            <div class="icon-float">💎</div>
+        </div>
+    </section>
+
+    <!-- Sezione Testimonials -->
+    <section class="testimonials-section">
+        <h2 class="section-title">TESTIMONIALS</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Edit incredibili! Ha trasformato il mio video in qualcosa di cinematografico. Consigliatissimo!"</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Marco R.</span>
+                        <span class="author-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
                 </div>
             </div>
-            <div class="achievement-item">
-                <div class="achievement-glow"></div>
-                <div class="achievement-content">
-                    <span class="achievement-icon">🔥</span>
-                    <h3 class="achievement-title">100% CUSTOM EDITS</h3>
-                    <p class="achievement-desc">Ogni video è unico e personalizzato</p>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Professionalità e creatività al top. Ogni dettaglio è perfetto, dai colori al sound design."</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Sara M.</span>
+                        <span class="author-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
                 </div>
             </div>
-            <div class="achievement-item">
-                <div class="achievement-glow"></div>
-                <div class="achievement-content">
-                    <span class="achievement-icon">🎬</span>
-                    <h3 class="achievement-title">NEON VFX MASTER</h3>
-                    <p class="achievement-desc">Effetti visivi daaltro livello</p>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Rapido, preciso e con un tocco unico. Il mio canale è cresciuto grazie ai suoi edit!"</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Luca B.</span>
+                        <span class="author-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
                 </div>
             </div>
-            <div class="achievement-item">
-                <div class="achievement-glow"></div>
-                <div class="achievement-content">
-                    <span class="achievement-icon">🚀</span>
-                    <h3 class="achievement-title">RAPID DELIVERY</h3>
-                    <p class="achievement-desc">Edit veloci senza compromettere la qualità</p>
+        </div>
+    </section>
+
+    <!-- Sezione Testimonials -->
+    <section class="testimonials-section">
+        <h2 class="section-title">TESTIMONIALS</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Edit incredibili! Ha trasformato il mio video in qualcosa di cinematografico. Consigliatissimo!"</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Marco R.</span>
+                        <span class="author-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
                 </div>
             </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Professionalità e creatività al top. Ogni dettaglio è perfetto, dai colori al sound design."</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Sara M.</span>
+                        <span class="author-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Rapido, preciso e con un tocco unico. Il mio canale è cresciuto grazie ai suoi edit!"</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Luca B.</span>
+                        <span class="author-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Galleria Showcase -->
+    <section class="gallery-section">
+        <h2 class="section-title">SHOWCASE</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <span class="gallery-icon">🎬</span>
+                    <span class="gallery-text">Edit #1</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <span class="gallery-icon">✨</span>
+                    <span class="gallery-text">Edit #2</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <span class="gallery-icon">🔥</span>
+                    <span class="gallery-text">Edit #3</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <span class="gallery-icon">⚡</span>
+                    <span class="gallery-text">Edit #4</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Minigame Aura Clicker -->
+    <section class="minigame-section">
+        <h2 class="section-title">AURA CLICKER</h2>
+        <div class="minigame-container">
+            <div class="minigame-stats">
+                <div class="game-score">Score: <span id="game-score">0</span></div>
+                <div class="game-time">Time: <span id="game-time">30</span>s</div>
+            </div>
+            <div class="minigame-area" id="minigame-area">
+                <div class="click-target" data-points="10">⚡</div>
+                <div class="click-target" data-points="20">🔥</div>
+                <div class="click-target" data-points="15">✨</div>
+                <div class="click-target" data-points="25">💎</div>
+            </div>
+            <button class="game-btn" id="start-game">START GAME</button>
+            <div class="game-message" id="game-message"></div>
         </div>
     </section>
 
@@ -113,12 +234,20 @@
         <div class="calculator-container">
             <div class="calculator-box">
                 <div id="quiz-container">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="current-question">1</span>/<span id="total-questions">7</span>
+                        </div>
+                    </div>
                     <div class="question-container" id="question-container">
                         <h3 class="question" id="question"></h3>
                         <div class="options" id="options"></div>
                     </div>
+                    <button class="next-btn" id="next-btn">PROSSIMA DOMANDA</button>
                 </div>
-                <button class="next-btn" id="next-btn">PROSSIMA DOMANDA</button>
                 <div id="result-container" class="result-container hidden">
                     <h3 class="result-title">IL TUO AURA SCORE</h3>
                     <div class="aura-score" id="aura-score"></div>
@@ -156,6 +285,31 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Sezione Coming Soon -->
+    <section class="coming-soon-section">
+        <div class="coming-soon-container">
+            <h2 class="coming-soon-title">MORE COMING SOON</h2>
+            <div class="coming-soon-features">
+                <div class="soon-feature">
+                    <span class="soon-icon">🎮</span>
+                    <p class="soon-text">Interactive Aura Game</p>
+                </div>
+                <div class="soon-feature">
+                    <span class="soon-icon">🌐</span>
+                    <p class="soon-text">NFT Collection</p>
+                </div>
+                <div class="soon-feature">
+                    <span class="soon-icon">🎨</span>
+                    <p class="soon-text">Custom Tutorials</p>
+                </div>
+            </div>
+            <div class="coming-soon-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Stay tuned for updates</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js?v=6"></script>
 </body>
 </html>

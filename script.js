@@ -26,6 +26,42 @@ const quizData = [
             { text: "No, ho sempre chiesto aiuto", points: -500 },
             { text: "Non ho mai avuto le mani occupate", points: 500 }
         ]
+    },
+    {
+        question: "Hai mai beccato qualcosa che cadeva mentre eri distratto?",
+        options: [
+            { text: "Sì, riflessi da gatto!", points: 12000 },
+            { text: "Sì, ma mi è quasi caduto addosso", points: 4000 },
+            { text: "No, ho guardato cadere tutto", points: -1500 },
+            { text: "Sono sempre attento", points: 3000 }
+        ]
+    },
+    {
+        question: "Sei riuscito a prendere le chiavi mentre cadevano con una mano sola?",
+        options: [
+            { text: "Ovviamente, skill da maestro", points: 11000 },
+            { text: "Ci ho provato ma le ho perse", points: 2000 },
+            { text: "No, sono cadute a terra", points: -1000 },
+            { text: "Non mi è mai capitato", points: 1000 }
+        ]
+    },
+    {
+        question: "Hai mai fatto un trick al volo con un oggetto senza provarci?",
+        options: [
+            { text: "Sì, ed è uscito perfetto!", points: 13000 },
+            { text: "Sì, ma è stato per caso", points: 5000 },
+            { text: "No, non ho questa abilità", points: -500 },
+            { text: "Non mi piace rischiare", points: 0 }
+        ]
+    },
+    {
+        question: "Sei riuscito a prendere un bicchiere che stava cadendo con una mano?",
+        options: [
+            { text: "Sì, riflessi istantanei!", points: 9000 },
+            { text: "Sì, ma ne ho versato un po'", points: 3000 },
+            { text: "No, si è rotto tutto", points: -2000 },
+            { text: "Non bevo mentre sono in movimento", points: 500 }
+        ]
     }
 ];
 
@@ -56,6 +92,16 @@ function initQuiz() {
 function showQuestion() {
     const currentData = quizData[currentQuestion];
     questionElement.textContent = currentData.question;
+    
+    // Aggiorna progress bar
+    const progressFill = document.getElementById('progress-fill');
+    const currentQuestionNum = document.getElementById('current-question');
+    const totalQuestionsNum = document.getElementById('total-questions');
+    
+    const progress = ((currentQuestion + 1) / quizData.length) * 100;
+    progressFill.style.width = progress + '%';
+    currentQuestionNum.textContent = currentQuestion + 1;
+    totalQuestionsNum.textContent = quizData.length;
     
     // Pulisci le opzioni precedenti
     optionsElement.innerHTML = '';
@@ -167,6 +213,42 @@ contactForm.addEventListener('submit', (e) => {
     submitBtn.disabled = true;
 });
 
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+    }, 2000); // 2 secondi di preloader
+});
+
+// Scroll Animations
+const sections = document.querySelectorAll('section');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('.theme-icon');
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    
+    if (document.body.classList.contains('light-mode')) {
+        themeIcon.textContent = '☀️';
+    } else {
+        themeIcon.textContent = '🌙';
+    }
+});
+
 // Inizializza il quiz quando la pagina è caricata
 document.addEventListener('DOMContentLoaded', initQuiz);
 
@@ -181,6 +263,101 @@ if (ctaButton) {
         ctaButton.style.background = 'linear-gradient(45deg, #ff0000, #cc0000)';
     });
 }
+
+// Minigame Aura Clicker
+const minigameArea = document.getElementById('minigame-area');
+const startGameBtn = document.getElementById('start-game');
+const gameScore = document.getElementById('game-score');
+const gameTime = document.getElementById('game-time');
+const gameMessage = document.getElementById('game-message');
+
+let gameInterval;
+let score = 0;
+let timeLeft = 30;
+let gameActive = false;
+
+function startGame() {
+    if (gameActive) return;
+    
+    gameActive = true;
+    score = 0;
+    timeLeft = 30;
+    gameScore.textContent = score;
+    gameTime.textContent = timeLeft;
+    gameMessage.textContent = '';
+    startGameBtn.disabled = true;
+    
+    // Clear and reposition targets
+    minigameArea.innerHTML = '';
+    createTargets();
+    
+    // Start timer
+    gameInterval = setInterval(() => {
+        timeLeft--;
+        gameTime.textContent = timeLeft;
+        
+        if (timeLeft <= 0) {
+            endGame();
+        }
+    }, 1000);
+}
+
+function createTargets() {
+    const targets = ['⚡', '🔥', '✨', '💎'];
+    const points = [10, 20, 15, 25];
+    
+    targets.forEach((emoji, index) => {
+        const target = document.createElement('div');
+        target.className = 'click-target';
+        target.textContent = emoji;
+        target.dataset.points = points[index];
+        
+        // Random position
+        target.style.left = Math.random() * 80 + 10 + '%';
+        target.style.top = Math.random() * 80 + 10 + '%';
+        
+        target.addEventListener('click', (e) => {
+            if (!gameActive) return;
+            
+            const points = parseInt(e.target.dataset.points);
+            score += points;
+            gameScore.textContent = score;
+            
+            // Reposition target
+            e.target.style.left = Math.random() * 80 + 10 + '%';
+            e.target.style.top = Math.random() * 80 + 10 + '%';
+            
+            // Visual feedback
+            e.target.style.transform = 'scale(1.5)';
+            setTimeout(() => {
+                e.target.style.transform = 'scale(1)';
+            }, 100);
+        });
+        
+        minigameArea.appendChild(target);
+    });
+}
+
+function endGame() {
+    clearInterval(gameInterval);
+    gameActive = false;
+    startGameBtn.disabled = false;
+    
+    let message = '';
+    if (score >= 500) {
+        message = '🔥 LEGGENDARIO! ' + score + ' punti!';
+    } else if (score >= 300) {
+        message = '⚡ EPICO! ' + score + ' punti!';
+    } else if (score >= 150) {
+        message = '✨ OTTIMO! ' + score + ' punti!';
+    } else {
+        message = '👍 ' + score + ' punti - Prova ancora!';
+    }
+    
+    gameMessage.textContent = message;
+}
+
+startGameBtn.addEventListener('click', startGame);
 
 // Smooth scroll per la navigazione
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
